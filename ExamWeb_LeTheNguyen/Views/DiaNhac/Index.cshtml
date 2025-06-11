@@ -1,0 +1,31 @@
+﻿@model List<DiaNhacManagerWeb.Models.DiaNhac>
+
+<div>
+    <a asp-action="Add">Add MuSic</a>
+</div>
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>Tựa CD</th>
+            <th>Thể Loại</th>
+            <th>Giá bán</th>
+            <th>Số Lượng</th>
+            <th>Action</th>
+        </tr>
+        @foreach (var DN in Model)
+        {
+            <tr>
+                <td>@DN.TuaCD</td>
+                <td>@DN.TheLoai</td>
+                <td>@DN.GiaBan</td>
+                <td>@DN.SoLuong</td>
+                
+                <td>
+                    <a asp-action="Update" asp-route-id="@DN.Id">Update</a>
+                    <a asp-action="Delete" asp-route-id="@DN.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>
